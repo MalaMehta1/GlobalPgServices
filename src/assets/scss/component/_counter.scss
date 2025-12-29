@@ -1,0 +1,83 @@
+@use '../config/' as *;
+
+.counter{
+    &-container{
+        background-color: rgb(228, 216, 216);
+        @extend .mb-10;
+        @extend .mt-3;
+        @extend .p-4;
+        @extend .half-radius;
+        
+    }
+    &-box{
+        @extend .flex-sa-c;
+        @extend .flex-wrap;
+        @extend .pure-white-500-bg;
+         @extend .p-4;
+        @extend .full-radius;
+        
+    }
+    &-item{
+       
+        @extend .flex-c-c;
+        @extend .font-24-pm;
+        .icon-wrapper{
+            @extend .mr-4;
+            @extend .font-30;
+            color: rgb(206, 67, 67);
+        }
+    }
+}
+/* =========================
+   Counter Animations
+========================= */
+
+.counter {
+  &-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: counterFadeUp 0.8s ease forwards;
+
+    /* stagger effect */
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.3s; }
+    &:nth-child(3) { animation-delay: 0.5s; }
+
+    /* hover lift */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .icon-wrapper {
+      animation: iconFloat 3s ease-in-out infinite;
+    }
+  }
+}
+@media screen and (max-width:768px){
+  .counter-box{
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   align-items: flex-start;
+  }
+
+}
+
+/* keyframes */
+@keyframes counterFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

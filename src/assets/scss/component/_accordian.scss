@@ -1,0 +1,91 @@
+
+
+@use '../config/' as *;
+
+.accordian-read-more{
+    .title{
+        color: #d61c22;
+        @extend .font-20-pb;
+        @extend .uppercase;
+    }
+   .block-item-text{
+    background-color: #ececeb;
+    @extend .p-5;
+    @extend .m-5;
+    @extend .half-radius;
+   }
+   .text{
+    @extend .font-14-pr;
+   }
+   .content-list{
+    list-style: circle;
+   }
+}
+
+
+// faq
+
+.faq-section {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* hide checkbox */
+.faq-item input {
+  display: none;
+}
+
+.faq-item label {
+  display: block;
+  padding: 1.2rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+/* plus / minus icon */
+.faq-item label::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-content p {
+  padding-bottom: 1.2rem;
+  color: #555;
+}
+
+/* when open */
+.faq-item input:checked + label::after {
+  transform: rotate(45deg);
+}
+
+.faq-item input:checked ~ .faq-content {
+  max-height: 200px;
+  padding-top: 0.5rem;
+}

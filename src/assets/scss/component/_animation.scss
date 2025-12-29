@@ -1,0 +1,143 @@
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes rotateText {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes text {
+    0% {
+        color: #000;
+    }
+
+    30% {
+        letter-spacing: 25px;
+    }
+
+    85% {
+        letter-spacing: 8px;
+    }
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* ---------------------------------------------
+   Scroll-reveal (IntersectionObserver driven)
+   Usage:
+   - data-reveal="fade-up|fade-down|fade-left|fade-right|fade|zoom-in"
+   - data-reveal-delay="150" (ms)
+   - data-reveal-duration="800" (ms)
+   - data-reveal-stagger="80" on a container + data-reveal-item on children
+---------------------------------------------- */
+
+[data-reveal],
+[data-reveal-item] {
+    --reveal-duration: 800ms;
+    --reveal-delay: 0ms;
+    --reveal-ease: cubic-bezier(.2, .8, .2, 1);
+
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    filter: blur(2px);
+
+    transition:
+        opacity var(--reveal-duration) var(--reveal-ease) var(--reveal-delay),
+        transform var(--reveal-duration) var(--reveal-ease) var(--reveal-delay),
+        filter var(--reveal-duration) var(--reveal-ease) var(--reveal-delay);
+
+    will-change: opacity, transform, filter;
+}
+
+/* Direction presets */
+[data-reveal="fade"],
+[data-reveal-item="fade"] {
+    transform: none;
+}
+
+[data-reveal="fade-up"],
+[data-reveal-item="fade-up"] {
+    transform: translate3d(0, 22px, 0);
+}
+
+[data-reveal="fade-down"],
+[data-reveal-item="fade-down"] {
+    transform: translate3d(0, -22px, 0);
+}
+
+[data-reveal="fade-left"],
+[data-reveal-item="fade-left"] {
+    transform: translate3d(22px, 0, 0);
+}
+
+[data-reveal="fade-right"],
+[data-reveal-item="fade-right"] {
+    transform: translate3d(-22px, 0, 0);
+}
+
+[data-reveal="zoom-in"],
+[data-reveal-item="zoom-in"] {
+    transform: scale(.96);
+    filter: blur(3px);
+}
+
+/* Revealed state */
+.is-revealed {
+    opacity: 1;
+    transform: none;
+    filter: none;
+}
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal],
+    [data-reveal-item] {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+}
+
+
