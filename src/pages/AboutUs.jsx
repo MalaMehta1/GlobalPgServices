@@ -8,7 +8,7 @@ import Team from '../components/Team'
 import PracticeArea from '../components/PracticeArea'
 import SectionHeader from '../components/common/SectionHeader'
 import WhyChooseUs from '../components/whyChooseUs'
-import ContactSection from '../components/contactSection'
+import ContactSection from '../components/ContactSection'
 
 const AboutUs = () => {
   const location = useLocation();

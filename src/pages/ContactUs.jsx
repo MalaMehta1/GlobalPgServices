@@ -4,7 +4,7 @@ import Contact from '../components/Contact'
 import Footer from '../components/common/Footer'
 import PageBanner from '../components/common/PageBanner'
 import { useLocation } from 'react-router-dom'
-import ContactSection from '../components/contactSection'
+import ContactSection from '../components/ContactSection'
 
 const ContactUs = () => {
   const location = useLocation();
