@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
     <Suspense>
       <App />
-      {/* <ScrollText/> */}
+      <ScrollText/>
       <div className='social-link-item '>
         <a href='https://wa.me/918424995088' className="social-link ">
           <FaWhatsappSquare className='whatsapp-fixed' />

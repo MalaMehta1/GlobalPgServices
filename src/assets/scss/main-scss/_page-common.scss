@@ -310,6 +310,8 @@
     overflow: hidden;
     background-color: #000;
     color: #fff;
+    display: flex;
+    align-items: center;
     // position: fixed;
     // bottom: 0;
     @extend .z5;
@@ -319,7 +321,7 @@
     display: inline-block;
     white-space: nowrap;
     animation: scroll-left 25s linear infinite;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: 0.5rem 0;
 }
 
