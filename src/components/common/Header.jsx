@@ -52,7 +52,15 @@ const Header = () => {
                 <div className='header-logo'>
                     <NavLink to = "/" onClick={closeMenu}>
                         <div className='logo-img-wrap' style={{"color":"white"}}>
-                            <img className='logo-img' src="../images/logo.png" alt="" />
+                            <img
+                                className='logo-img'
+                                src="/images/logo.png"
+                                alt="Global PG Services logo"
+                                width="128"
+                                height="128"
+                                decoding="async"
+                                fetchpriority="high"
+                            />
                         </div>
                     </NavLink>
                 </div>

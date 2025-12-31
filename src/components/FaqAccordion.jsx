@@ -8,9 +8,9 @@ const FaqAccordion = () => {
     },
     {
       id: "faq2",
-      question: "Are meals included in the stay?",
+      question: "Is kitchen service available?",
       answer:
-        "Yes, hygienic and nutritious meals are provided. Meal plans may vary based on accommodation."
+        "Yes, kitchen facilities are available; however, cooking and meal preparation must be done by the guests themselves."
     },
     {
       id: "faq3",

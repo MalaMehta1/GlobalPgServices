@@ -16,7 +16,15 @@ const Footer = () => {
                 <div className='footer-logo' data-reveal-item="fade-up">
                     <a href="/">
                         <div className='logo-img-wrap'>
-                            <img className='logo-img' src="../images/logo.png" alt="" />
+                            <img
+                                className='logo-img'
+                                src="/images/logo.png"
+                                alt="Global PG Services logo"
+                                width="320"
+                                height="320"
+                                loading="lazy"
+                                decoding="async"
+                            />
                         
                         </div>
                         {/* <h1 className='logo-text'>GLOBAL PG SERVICES</h1> */}
